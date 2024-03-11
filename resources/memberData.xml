@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>member</comment>
+<entry key="findMemberId">SELECT ID FROM MEMBER WHERE NAME=? AND MEMBERNO=?</entry>
+<entry key="insertUser">INSERT INTO MEMBER VALUES(NEXTVAL('SEQ_USER'),?,?,?,?,?,?,?)</entry>
+<entry key="selectMember">SELECT *FROM MEMBER WHERE NAME=? AND MEMBERNO=?</entry>
+<entry key="deleteMember">DELETE FROM MEMBER WHERE NAME=? AND MEMBERNO=?</entry>
+</properties>

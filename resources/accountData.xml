@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>account</comment>
+<entry key="insertAccount">INSERT INTO ACCOUNT(ID,MEMBER_ID,ACCOUNT_NUMBER,ACCOUNT_PASSWORD,ACCOUNT_TYPE)VALUES(NEXTVAL('seq_account'),?,?,?,?)</entry>
+<entry key="selectAccounts">SELECT NAME,ACCOUNT_NUMBER,BALANCE,ACCOUNT_TYPE,OPENING_DATE FROM MEMBER M JOIN ACCOUNT A ON(M.ID=A.MEMBER_ID) WHERE NAME=? AND MEMBERNO=?</entry>
+<entry key="selectAccount">SELECT NAME,ACCOUNT_NUMBER ,BALANCE,ACCOUNT_TYPE,OPENING_DATE FROM MEMBER M JOIN ACCOUNT A ON (M.ID=A.MEMBER_ID) WHERE NAME=? AND (ACCOUNT_NUMBER=? AND ACCOUNT_PASSWORD=?)</entry>
+<entry key="deleteAccount">DELETE FROM ACCOUNT WHERE ACCOUNT_NUMBER=? AND ACCOUNT_PASSWORD=?</entry>
+</properties>

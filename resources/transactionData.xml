@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>transaction</comment>
+<entry key="insertTransaction_transmit">INSERT INTO TRANSACTION_REQUEST VALUES(?,?,?,?,?,'이체',?,?)</entry>
+<entry key="findByAccountId2">SELECT ID FROM ACCOUNT WHERE ACCOUNT_NUMBER=? AND ACCOUNT_PASSWORD=?</entry>
+<entry key="findByAccountId1">SELECT ID FROM ACCOUNT WHERE ACCOUNT_NUMBER=?</entry>
+<entry key="insertTransaction_Output">INSERT INTO TRANSACTION_REQUEST VALUES(?,?,?,NULL,NULL,'출금',?,0)</entry>
+<entry key="selectTransaction">SELECT  TRANSACTION_TYPE,AMOUNT,coalesce(COUNTERPARTY_ACCOUNT_NUM,'-') AS "이체계좌",T.BALANCE AS "거래후 계좌 잔액" 	FROM MEMBER M JOIN ACCOUNT A ON (M.ID=A.MEMBER_ID)  JOIN TRANSACTION T ON (A.ID=T.ACCOUNT_ID) 	WHERE (ACCOUNT_NUMBER=? AND ACCOUNT_PASSWORD=?)AND NAME=?</entry>
+<entry key="selectALLTransaction">SELECT ACCOUNT_NUMBER, TRANSACTION_TYPE,AMOUNT,coalesce(COUNTERPARTY_ACCOUNT_NUM,'-') AS "이체계좌",T.BALANCE AS "거래후 계좌 잔액" 	FROM MEMBER M JOIN ACCOUNT A ON (M.ID=A.MEMBER_ID)  JOIN TRANSACTION T ON (A.ID=T.ACCOUNT_ID) 	WHERE MEMBERNO=? AND NAME=?</entry>
+<entry key="insertTransaction_Input">INSERT INTO TRANSACTION_REQUEST VALUES(?,?,?,NULL,NULL,'입금',?,0)</entry>
+<entry key="findBalance">SELECT BALANCE FROM ACCOUNT WHERE ID=?</entry>
+</properties>
